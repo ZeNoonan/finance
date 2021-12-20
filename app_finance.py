@@ -156,16 +156,161 @@ def enterprise_value(ticker, period = 'annual'):
     data = response.read().decode("utf-8")
     return safe_read_json(data)
 
+def income_statement(ticker, period = 'annual', ftype = 'full'):
+    """Income statement API from https://fmpcloud.io/documentation#incomeStatement
+
+    Input:
+        ticker : ticker for which we need the income statement
+        period : 'annual', 'quarter'. Periodicity of requested balance sheet. Defaults to annual
+        ftype : 'full', 'growth'. Defines input sheet type. Defaults to full.
+    Returns:
+        Income statement info for selected ticker
+    """
+    urlroot = get_urlroot()
+    apikey = get_apikey()
+    typeurl = ''
+    try:
+        if ftype == 'full':
+            typeurl = 'income-statement/'
+        elif ftype == 'growth':
+            typeurl = 'income-statement-growth/'
+#        elif bstype == 'short':
+#            typeurl = 'income-statement-shorten/'
+#        elif bstype == 'growth-short':
+#            typeurl = 'income-statement-growth-shorten/'
+    except KeyError:
+        raise KeyError('Income statement type not correct')
+
+    url = urlroot + typeurl + ticker.upper() + "?" + "period=" + period + "&apikey=" + apikey
+    response = urlopen(url)
+    data = response.read().decode("utf-8")
+    return safe_read_json(data)
+
+def cash_flow_statement(ticker, period = 'annual', ftype = 'full'):
+    """Cash Flow Statement API from https://fmpcloud.io/documentation#cashFlowStatement
+
+    Input:
+        ticker : ticker for which we need the cash flow statement
+        period : 'annual', 'quarter'. Periodicity of requested balance sheet. Defaults to annual
+        ftype : 'full', 'growth'. Defines input sheet type. Defaults to full.
+    Returns:
+        Income statement info for selected ticker
+    """
+    urlroot = get_urlroot()
+    apikey = get_apikey()
+    typeurl = ''
+    try:
+        if ftype == 'full':
+            typeurl = 'cash-flow-statement/'
+        elif ftype == 'growth':
+            typeurl = 'cash-flow-statement-growth/'
+#        elif bstype == 'short':
+#            typeurl = 'income-statement-shorten/'
+#        elif bstype == 'growth-short':
+#            typeurl = 'income-statement-growth-shorten/'
+    except KeyError:
+        raise KeyError('Cash Flow Statement type not correct')
+
+    url = urlroot + typeurl + ticker.upper() + "?" + "period=" + period + "&apikey=" + apikey
+    response = urlopen(url)
+    data = response.read().decode("utf-8")
+    return safe_read_json(data)
+
+def dcf(ticker, history = 'today'):
+    """Discounted Cash Flow Valuation API from https://fmpcloud.io/documentation#dcf
+
+    Input:
+        ticker : ticker for which we need the dcf
+        history: 'today','daily', 'quarter', 'annual'. Periodicity of requested DCF valuations. Defaults to single value of today
+    Returns:
+        Discounted Cash Flow Valuation info for selected ticker
+    """
+    urlroot = get_urlroot()
+    apikey = get_apikey()
+    try:
+        if history == 'today':
+            typeurl = 'discounted-cash-flow/'
+            url = urlroot + typeurl + ticker.upper() + "?" + "apikey=" + apikey
+        elif history == 'daily':
+            typeurl = 'historical-daily-discounted-cash-flow/'
+            url = urlroot + typeurl + ticker.upper() + "?" + "apikey=" + apikey
+        elif history == 'annual':
+            typeurl = 'historical-discounted-cash-flow-statement/'
+            url = urlroot + typeurl + ticker.upper() + "?" + "apikey=" + apikey
+        elif history == 'quarter':
+            typeurl = 'historical-discounted-cash-flow-statement/'
+            url = urlroot + typeurl + ticker.upper() + "?" + "period=" + history + "&apikey=" + apikey
+    except KeyError:
+        raise KeyError('Discounted Cash Flow history requested not correct. ' + history + ' is not an accepted key')
+    response = urlopen(url)
+    data = response.read().decode("utf-8")
+    return safe_read_json(data)
+
+def market_capitalization(ticker, history = 'today'):
+    """Market Capitalization API from https://fmpcloud.io/documentation#marketCapitalization
+
+    Input:
+        ticker : ticker for which we need the Market Cap
+        history: 'today','daily'. Periodicity of requested Market Caps. Defaults to single value of today
+    Returns:
+        Market Cap info for selected ticker
+    """
+    urlroot = get_urlroot()
+    apikey = get_apikey()
+    try:
+        if history == 'today':
+            typeurl = 'market-capitalization/'
+        elif history == 'daily':
+            typeurl = 'historical-market-capitalization/'
+    except KeyError:
+        print('Market Cap history requested not correct')
+    url = urlroot + typeurl + ticker.upper() + "?" + "apikey=" + apikey
+    response = urlopen(url)
+    data = response.read().decode("utf-8")
+    return safe_read_json(data)
+
+def balance_sheet(ticker, period = 'annual', ftype = 'full'):
+    """Balance sheet API from https://fmpcloud.io/documentation#balanceSheet
+
+    Input:
+        ticker : ticker for which we need the balance sheet values
+        period : 'annual', 'quarter'. Periodicity of requested balance sheet. Defaults to annual
+        ftype : 'full', 'growth'. Defines input sheet type. Defaults to full.
+    Returns:
+        Balance sheet info for selected ticker
+    """
+    urlroot = get_urlroot()
+    apikey = get_apikey()
+    typeurl = ''
+    try:
+        if ftype == 'full':
+            typeurl = 'balance-sheet-statement/'
+        elif ftype == 'growth':
+            typeurl = 'balance-sheet-statement-growth/'
+#        elif ftype == 'short':
+#            typeurl = 'balance-sheet-statement-shorten/'
+#        elif ftype == 'growth-short':
+#            typeurl = 'balance-sheet-statement-growth-shorten/'
+    except KeyError:
+        print('Balance sheet type not correct')
+
+    url = urlroot + typeurl + ticker.upper() + "?" + "&period=" + period + "&apikey=" + apikey
+    data = safe_read_json(url)
+    return data
+
 today = datetime.today()
 todaystr = today.strftime("%Y-%m-%d")
 ten_years_ago = datetime.today() - timedelta(days=10*365)
 ten_years_ago_str = ten_years_ago.strftime("%Y-%m-%d")
+one_years_ago = datetime.today() - timedelta(days=1*365)
+one_years_ago_str = one_years_ago.strftime("%Y-%m-%d")
+
 
 years = mdates.YearLocator()   # every year
 months = mdates.MonthLocator()  # every month
 years_fmt = mdates.DateFormatter('%Y')
 
-#https://github.com/JavierCastilloGuillen/Market_Screener/blob/master/screener_csv.py
+
 
 st.title('Fundamentals')
 
@@ -188,6 +333,9 @@ symbol_search = st.sidebar.text_input('Symbol', 'AMZN')
 #selected = st.sidebar.selectbox('symbols found', scroll_list)
 
 
+# http://www.beatthemarketanalyzer.com/blog/sp-400-mid-cap-stock-tickers-list/
+# https://github.com/JavierCastilloGuillen/Market_Screener/blob/master/screener_csv.py
+
 
 
 if st.sidebar.button("Start"):
@@ -199,22 +347,44 @@ if st.sidebar.button("Start"):
         st.write('showing results for:', symbol)
 
         # get historical prices
-        df_prices_ = historical_stock_data(symbol, dailytype = 'line', start = ten_years_ago_str, end =todaystr)
+        df_prices_ = historical_stock_data(symbol, dailytype = 'line', start = one_years_ago_str, end =todaystr)
         df_prices = df_prices_.reset_index()
-        st.write('df_prices',df_prices.head())
+        st.write('df_prices',df_prices.head(1))
         # get financial ratios
-        df_ratios = cv.financial_ratios(ticker=symbol,period='annual',ttm = False)
-        st.write('df_ratios',df_ratios.head(5))
+        df_ratios = financial_ratios(ticker=symbol,period='annual',ttm = False)
+        st.write('df_ratios',df_ratios.head(1))
         # get performance metrics
-        df_metrics = cv.key_metrics(ticker =symbol, period = 'annual')
-        st.write('df_metrics',df_metrics.head())
+        df_metrics = key_metrics(ticker =symbol, period = 'annual')
+        st.write('df_metrics',df_metrics.head(1))
         # get income statement
-        df_income = cv.income_statement(ticker = symbol, period = 'annual', ftype = 'full')
-        st.write('df_income',df_income.head())
+        df_income = income_statement(ticker = symbol, period = 'annual', ftype = 'full')
+        st.write('df_income',df_income.head(1))
+        df_metrics = enterprise_value(ticker =symbol, period = 'annual')
+        df_metrics = balance_sheet(ticker =symbol, period = 'annual')
+        st.write('df_enterprise',df_metrics.head(1))
+
+
         # get cashflow statement
-        df_cashflow = cv.cash_flow_statement(ticker = symbol, period = 'annual', ftype = 'full')
+        # df_cashflow = cash_flow_statement(ticker = symbol, period = 'annual', ftype = 'full')
         # get discounted cash_flow_statement
-        df_dcf = cv.dcf(ticker = symbol, history = 'annual')
+        # df_dcf = dcf(ticker = symbol, history = 'annual')
 
     except:
         st.write("Stock data unavailable!")
+
+stocks=pd.read_excel('C:/Users/Darragh/Documents/Python/finance_ratios/ticker_select.xlsx')
+# st.write(stocks['Ticker'])
+
+for symbol in stocks['Ticker']:
+    try:
+        # count += 1
+        # df = investpy.get_stock_historical_data(stock=ticker,country=country,from_date=f'{start}', to_date=f'{today}')
+        df = historical_stock_data(symbol, dailytype = 'line', start = one_years_ago_str, end =todaystr)
+        # df= df.rename(columns={"Close": "Adj Close"})
+        # print(f'Analyzing {count}.....{ticker}')
+        # print(df.info())  <== To see what you're getting
+        df.to_csv(fr'data/{symbol}.csv')
+        # time.sleep(0.25)
+    except Exception as e:
+        st.write(e)
+        st.write(f'No data on {symbol}')
