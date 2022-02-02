@@ -223,8 +223,11 @@ df_2['break?']=0
 df_2['opening_var']=1000
 df_2['closing_var']=df_2['opening_var'] * .5
 st.write('len',len(df_2))
-df_2.iloc[[6], [df_2.columns.get_loc('break?')]]=1
-st.write('df2',df_2)
+df_2.iloc[[4], [df_2.columns.get_loc('break?')]]=1
+df_2.iloc[[8], [df_2.columns.get_loc('break?')]]=1
+cols_to_move=['Date','year','var_simple_estimate','opening_var','port_movem','break?','closing_var']
+df_2 = df_2[ cols_to_move + [ col for col in df_2 if col not in cols_to_move ] ]
+# st.write('df2',df_2)
 # for i in range(1, (len(df_2))):
 #     if (df_2.loc[0,['break?']]==0).any():
 #         df_2.iloc[[i], [df_2.columns.get_loc('closing_var')]] = (df_2.iloc[[i-1], [df_2.columns.get_loc('closing_var')]]) * .5
@@ -233,18 +236,37 @@ st.write('df2',df_2)
 #         st.write('oh oh break')
 
 # for i in range(1, (len(df_2))):
+
+# THIS WORKS SAVE IT
 for idx, row in df_2.iterrows():
     if idx==len(df_2)-1:
+        st.write('break:')
+        st.write('len df-1',len(df_2)-1)
         break
-    # if (df_2.loc[~['break?']]==1):
-    if row['break?']<1:
+    df_2.iloc[[idx+1], [df_2.columns.get_loc('opening_var')]] = (df_2.iloc[[idx], [df_2.columns.get_loc('closing_var')]])
+    if row['break?']<0.9:
+        st.write('idx:',idx, 'idx+1:',idx+1,'[break?]:',row['break?'])
         df_2.iloc[[idx+1], [df_2.columns.get_loc('closing_var')]] = (df_2.iloc[[idx], [df_2.columns.get_loc('closing_var')]]) * .5
-        df_2.iloc[[idx+1], [df_2.columns.get_loc('opening_var')]] = (df_2.iloc[[idx], [df_2.columns.get_loc('closing_var')]])
-    # df_2['opening_var'] = df_2['closing_var']
     else:
+        st.write('idx:',idx, 'idx+1:',idx+1,'[break?]:',row['break?'])
+        df_2.iloc[[idx+1], [df_2.columns.get_loc('closing_var')]] = df_2.iloc[[idx], [df_2.columns.get_loc('closing_var')]] * 10
         st.write('oh oh break')
 
 
+# for idx, row in df_2.iterrows():
+#     if idx==len(df_2):
+#         st.write('break:')
+#         st.write('len df-1',len(df_2))
+#         break
+    
+#     if row['break?']<0.9:
+#         st.write('idx:',idx, 'idx+1:',idx+1,'[break?]:',row['break?'])
+#         df_2.iloc[[idx], [df_2.columns.get_loc('closing_var')]] = (df_2.iloc[[idx-1], [df_2.columns.get_loc('closing_var')]]) * .5
+#         df_2.iloc[[idx], [df_2.columns.get_loc('opening_var')]] = (df_2.iloc[[idx-1], [df_2.columns.get_loc('closing_var')]])
+#     else:
+#         st.write('idx:',idx, 'idx+1:',idx+1,'[break?]:',row['break?'])
+#         df_2.iloc[[idx+1], [df_2.columns.get_loc('closing_var')]] = df_2.iloc[[idx], [df_2.columns.get_loc('closing_var')]] * 10
+#         st.write('oh oh break')
 
 st.write('df2 after for loop',df_2)
 
