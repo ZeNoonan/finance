@@ -1,3 +1,4 @@
+from contextlib import closing
 import pandas as pd
 import numpy as np
 import streamlit as st
@@ -93,83 +94,41 @@ for idx, row in df_2.iloc[1:].iterrows():
 
 st.write('df2 after for loop',df_2)
 
-st.write(data)
+st.write('before looping',data)
+
 simple_estimate=data['var_simple_estimate'].tolist()[2:]
 port_movem=data['port_movem'].tolist()[2:]
-opening_var=simple_estimate.copy()
+opening_var=(data['var_simple_estimate']*.5).tolist()[2:].copy()
+opening_var=list(([10000]*(len(data[2:]))))
 break_param=list(([0]*(len(data[2:]))))
-closing_var=simple_estimate.copy()
+# closing_var=simple_estimate.copy()
+closing_var=list(([10000]*(len(data[2:]))))
 # st.write(break_param)
 # st.write(port_movem)
 
 raw_data=[]
+# def run_function():
+
+    # while True:
 for i,(simple_estimate, port_movem, opening_var, break_param,closing_var) in \
-     enumerate(zip(simple_estimate[1:], port_movem[1:], opening_var[1:], break_param[1:],closing_var[1:])):
+    enumerate(zip(simple_estimate[1:], port_movem[1:], opening_var[1:], break_param[1:],closing_var[1:])):
+    opening_var=closing_var
+    # st.write('i:',i,'opening var',opening_var)
+    # st.write('i+1',opening_var[0])
+    if break_param==0:
+        # opening_var=closing_var
+        closing_var=(opening_var*0.94)+(simple_estimate*.06)
+        # opening_var=closing_var
+        #  st.write('simp_est:',simple_estimate,'open:',opening_var,'close:',closing_var)
+        raw_data.append((i,simple_estimate,port_movem,opening_var,break_param,closing_var))
+    if break_param==1:
+        closing_var=(opening_var*2)
+        raw_data.append((i,simple_estimate,port_movem,opening_var,break_param,closing_var))
     
-    st.write('i:',i,'opening var',opening_var)
-    opening_var=closing_var[i-1]
-    st.write('i:',i,'opening var',opening_var)
+    # opening_var=closing_var
 
-    # if break_param==0:
-    #     st.write('i:',i)
-    # if i==0:
-    #     break
-    
-        # st.write('yes')
-    st.write(i,simple_estimate, port_movem, opening_var, break_param,closing_var)
+          
 
-# x=data.loc[0,['opening_var']]
-# st.write(x)
-# data['mask']=0
-# data.loc[0,['mask']]=data.loc[0,['opening_var']].values.tolist()[0]
-# st.write(data)
+df=pd.DataFrame(raw_data).rename(columns=({1:'simp_est',2:'port_move',3:'opening_var',4:'break',5:'closing_var'}))
+st.write(df)
 
-
-
-df = pd.DataFrame({'c1': [10, 11, 12], 'c2': [100, 110, 120]})
-df = df.reset_index()  # make sure indexes pair with number of rows
-# st.write(df)
-# for index, row in df.iterrows():
-    # st.write('row[C1]:',row['c1'],'row[C2]:', row['c2'])
-
-
-
-
-# https://stackoverflow.com/questions/63687138/how-to-perform-a-rolling-summation-and-multiplication-in-pandas
-# https://stackoverflow.com/questions/43710057/calculate-dataframe-values-recursively
-# https://stackoverflow.com/questions/38008390/how-to-constuct-a-column-of-data-frame-recursively-with-pandas-python
-
-df = pd.DataFrame([[100,100,0,0,0,0,0,0,0,0],[1.03, 1.02, 0.97, 1.02, 0.92, 1.08, 1.03 ,1.02, 1.03, 0.98],[0,0,0,0,0,0,0,0,0,0]]).T
-df.index = ['2017-12-30', '2017-12-30', '2017-12-31','2018-01-01','2018-01-01',
-            '2018-01-02','2018-01-02','2018-01-02','2018-01-03','2018-01-03']
-
-# st.write('df',df)
-# st.write('this df[1]', df[1]-1)
-#initiate varaibles
-res_col2 = []
-res_col0 = []
-s = 0 # same date result sum
-# initiate values
-mult = df.iloc[0,0]
-idx0 = df.index[0]
-# st.write('this is df before processing',mult)
-# st.write('this is df before processing',df.index[0])
-# loop with iteritems, not too bad with 3000 rows
-for idx, val in (df[1]-1).iteritems(): #note the -1 is here already
-    # st.write('idx:',idx)
-    # st.write('val:',val)
-    # update the mult and idx0 in case of not same date
-    if idx != idx0:
-        mult += s
-        idx0 = idx
-        s = 0
-    # calculate the result
-    r = mult*val
-    s += r
-    res_col2.append(r)
-    res_col0.append(mult)
-
-df[0] = res_col0
-df[2] = res_col2
-
-# st.write(df)
