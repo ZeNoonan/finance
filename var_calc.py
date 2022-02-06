@@ -1,4 +1,5 @@
 from contextlib import closing
+import sched
 import pandas as pd
 import numpy as np
 import streamlit as st
@@ -104,7 +105,7 @@ break_param=list(([0]*(len(data[2:]))))
 # closing_var=simple_estimate.copy()
 closing_var=list(([10000]*(len(data[2:]))))
 # st.write(break_param)
-# st.write(port_movem)
+
 
 raw_data=[]
 # def run_function():
@@ -125,10 +126,62 @@ for i,(simple_estimate, port_movem, opening_var, break_param,closing_var) in \
         closing_var=(opening_var*2)
         raw_data.append((i,simple_estimate,port_movem,opening_var,break_param,closing_var))
     
-    # opening_var=closing_var
+    opening_var=closing_var
+    st.write('open:',opening_var)
+    st.write('close:',closing_var)
 
           
 
 df=pd.DataFrame(raw_data).rename(columns=({1:'simp_est',2:'port_move',3:'opening_var',4:'break',5:'closing_var'}))
 st.write(df)
 
+# def simple_function(simple_estimate):
+#     p=1
+#     for simple_estimate in simple_estimate:
+#         st.write('simp',simple_estimate)
+#     # while simple_estimate>0:
+#         yield OrderedDict([('Month',simple_estimate),('Period',p)])
+#     p += 1
+
+# st.write(simple_function(simple_estimate))
+
+addl_principal=[100,200,300,400,500,600,700]
+
+def amortize(principal, interest_rate, years, addl_principal=[0], annual_payments=12, start_date=date.today()):
+
+    pmt = -round(np.pmt(interest_rate/annual_payments, years*annual_payments, principal), 2)
+    # initialize the variables to keep track of the periods and running balances
+    p = 1
+    beg_balance = principal
+    end_balance = principal
+
+    while end_balance > 0:
+
+        # for addl_principal in addl_principal:
+            # Recalculate the interest based on the current balance
+            interest = round(((interest_rate/annual_payments) * beg_balance), 2)
+
+            # Determine payment based on whether or not this period will pay off the loan
+            pmt = min(pmt, beg_balance + interest)
+            principal = pmt - interest
+
+            # Ensure additional payment gets adjusted if the loan is being paid off
+            addl_principal = min(addl_principal, beg_balance - principal)
+            end_balance = beg_balance - (principal + addl_principal)
+
+            yield OrderedDict([('Month',start_date),
+                            ('Period', p),
+                            ('Begin Balance', beg_balance),
+                            ('Payment', pmt),
+                            ('Principal', principal),
+                            ('Interest', interest),
+                            ('Additional_Payment', addl_principal),
+                            ('End Balance', end_balance)])
+
+            # Increment the counter, balance and date
+            p += 1
+            start_date += relativedelta(months=1)
+            beg_balance = end_balance
+
+# schedule = pd.DataFrame(amortize(100000, .04, 30, addl_principal=addl_principal, start_date=date(2016, 1,1)))
+# st.write(schedule)
