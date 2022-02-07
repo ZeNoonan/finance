@@ -127,23 +127,47 @@ for i,(simple_estimate, port_movem, opening_var, break_param,closing_var) in \
         raw_data.append((i,simple_estimate,port_movem,opening_var,break_param,closing_var))
     
     opening_var=closing_var
-    st.write('open:',opening_var)
-    st.write('close:',closing_var)
+    # st.write('open:',opening_var)
+    # st.write('close:',closing_var)
 
           
 
 df=pd.DataFrame(raw_data).rename(columns=({1:'simp_est',2:'port_move',3:'opening_var',4:'break',5:'closing_var'}))
-st.write(df)
+st.write('table',df)
 
-# def simple_function(simple_estimate):
-#     p=1
-#     for simple_estimate in simple_estimate:
-#         st.write('simp',simple_estimate)
-#     # while simple_estimate>0:
-#         yield OrderedDict([('Month',simple_estimate),('Period',p)])
-#     p += 1
+st.write('below is the data')
+# st.write(data['var_simple_estimate'].tolist()[2:])
+simple_estimate=data['var_simple_estimate'].tolist()[2:]
+port_movem=data['port_movem'].tolist()[2:]
+break_param=list(([0]*(len(data[2:]))))
+st.write(break_param)
+# for _ in simple_estimate:
+#     st.write('_',_)
 
-# st.write(simple_function(simple_estimate))
+
+
+def simple_function(simple_estimate,break_param,port_movem):
+    opening_balance=simple_estimate[0]
+    count = 1
+    closing_balance=0
+    # newx = []
+    # mu = mean(x["X"])
+    # sigma = std(x["X"])
+    # while count <= len(simple_estimate):
+    # while count > 0:
+    # for (estimate) in (simple_estimate):
+    # st.write('check port move', port_movem)
+    for (estimate,break_param, movement) in zip(simple_estimate,break_param,port_movem):
+        closing_balance=(estimate*0.1)+opening_balance*0.9
+        port_movem=movement*1
+        break_param=break_param*1
+        yield OrderedDict([('estimate',estimate),('open_bal',opening_balance),('port_move',port_movem),('break',break_param),
+        ('clos_bal',closing_balance),('Period',count)])
+        count += 1
+        opening_balance=closing_balance
+
+st.write(pd.DataFrame(simple_function(simple_estimate,break_param=break_param,port_movem=port_movem)))
+
 
 addl_principal=[100,200,300,400,500,600,700]
 
