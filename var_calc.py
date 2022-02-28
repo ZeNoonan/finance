@@ -7,12 +7,13 @@ import seaborn as sns
 from collections import OrderedDict
 from dateutil.relativedelta import *
 from datetime import date
+import datetime as datetime
 
 st.set_page_config(layout="wide")
 # https://www.nasdaq.com/market-activity/index/spx/historical
 # https://fred.stlouisfed.org/categories/32255
 
-data = pd.read_csv('C:/Users/Darragh/Documents/Python/aaron_brown/HistoricalData_1644441239712.csv')
+data = pd.read_csv('C:/Users/Darragh/Documents/Python/aaron_brown/HistoricalData_1645994969204.csv')
 
 data['Date']=pd.to_datetime(data['Date']).dt.normalize()
 data['year']=data['Date'].dt.year
@@ -75,9 +76,40 @@ df_graph_data=df_graph_data.melt(id_vars='Date',var_name='movement',value_name='
 # df_graph_data=df_graph_data.melt(id_vars='Date')
 
 st.write(df_graph_data)
+graph_2017 = df_graph_data[df_graph_data['Date'].dt.year==2017]
+past_360_days = df_graph_data[df_graph_data['Date'] > datetime.datetime.now() - pd.to_timedelta("360day")]
+past_720_days = df_graph_data[df_graph_data['Date'] > datetime.datetime.now() - pd.to_timedelta("720day")]
+graph_2020 = df_graph_data[df_graph_data['Date'].dt.year==2020]
 # df_graph_data=df_graph_data.melt(id_vars='open_bal',value_vars='Date')
 
 st.altair_chart(alt.Chart(df_graph_data).mark_line().encode(
+    # x='yearmonth(Date):T',
+    x=alt.X('Date',axis=alt.Axis(title='date',labelAngle=90)),
+    # x=alt.X('year(Date):T',axis=alt.Axis(title='date',labelAngle=90)),
+    y='value',
+    color='movement',
+    strokeDash='movement',
+),use_container_width=True)
+
+st.altair_chart(alt.Chart(graph_2017).mark_line().encode(
+    # x='yearmonth(Date):T',
+    x=alt.X('Date',axis=alt.Axis(title='date',labelAngle=90)),
+    # x=alt.X('year(Date):T',axis=alt.Axis(title='date',labelAngle=90)),
+    y='value',
+    color='movement',
+    strokeDash='movement',
+),use_container_width=True)
+
+st.altair_chart(alt.Chart(past_360_days).mark_line().encode(
+    # x='yearmonth(Date):T',
+    x=alt.X('Date',axis=alt.Axis(title='date',labelAngle=90)),
+    # x=alt.X('year(Date):T',axis=alt.Axis(title='date',labelAngle=90)),
+    y='value',
+    color='movement',
+    strokeDash='movement',
+),use_container_width=True)
+
+st.altair_chart(alt.Chart(graph_2020).mark_line().encode(
     # x='yearmonth(Date):T',
     x=alt.X('Date',axis=alt.Axis(title='date',labelAngle=90)),
     # x=alt.X('year(Date):T',axis=alt.Axis(title='date',labelAngle=90)),
