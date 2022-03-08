@@ -82,6 +82,7 @@ past_720_days = df_graph_data[df_graph_data['Date'] > datetime.datetime.now() - 
 graph_2020 = df_graph_data[df_graph_data['Date'].dt.year==2020]
 # df_graph_data=df_graph_data.melt(id_vars='open_bal',value_vars='Date')
 
+st.write('Below is Entire History from 2012 to present')
 st.altair_chart(alt.Chart(df_graph_data).mark_line().encode(
     # x='yearmonth(Date):T',
     x=alt.X('Date',axis=alt.Axis(title='date',labelAngle=90)),
@@ -91,6 +92,7 @@ st.altair_chart(alt.Chart(df_graph_data).mark_line().encode(
     strokeDash='movement',
 ),use_container_width=True)
 
+st.write('Below is 2017 Year')
 st.altair_chart(alt.Chart(graph_2017).mark_line().encode(
     # x='yearmonth(Date):T',
     x=alt.X('Date',axis=alt.Axis(title='date',labelAngle=90)),
@@ -100,6 +102,7 @@ st.altair_chart(alt.Chart(graph_2017).mark_line().encode(
     strokeDash='movement',
 ),use_container_width=True)
 
+st.write('Below is past 360 days')
 st.altair_chart(alt.Chart(past_360_days).mark_line().encode(
     # x='yearmonth(Date):T',
     x=alt.X('Date',axis=alt.Axis(title='date',labelAngle=90)),
@@ -109,6 +112,7 @@ st.altair_chart(alt.Chart(past_360_days).mark_line().encode(
     strokeDash='movement',
 ),use_container_width=True)
 
+st.write('Below is 2020 Year')
 st.altair_chart(alt.Chart(graph_2020).mark_line().encode(
     # x='yearmonth(Date):T',
     x=alt.X('Date',axis=alt.Axis(title='date',labelAngle=90)),
