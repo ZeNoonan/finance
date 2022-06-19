@@ -4,7 +4,7 @@ import streamlit as st
 import altair as alt
 from st_aggrid import AgGrid, GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode, JsCode
 import seaborn as sns
-import yfinance as yf
+# import yfinance as yf
 from datetime import datetime
 from datetime import timedelta
 import yahoo_fin.stock_info as si
