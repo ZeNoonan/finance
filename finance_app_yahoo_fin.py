@@ -53,12 +53,15 @@ stocks=pd.read_excel('C:/Users/Darragh/Documents/Python/finance_ratios/ticker_se
 
 def stats(x):
     df=si.get_income_statement(ticker=x,yearly=False)
+    df['coding']='pl'
     df1=si.get_balance_sheet(ticker=x,yearly=False)
+    df1['coding']='bs'
     # df=df.rename(columns={0:'Attribute',1:'Value'})
     return pd.concat([df,df1])
     
 stats_df=stats("aapl")
 st.write(stats_df)
+st.download_button(label="Download data as CSV",data=stats_df.to_csv().encode('utf-8'),file_name='large_df.csv',mime='text/csv')
 
 def historical_price(x):
     df=si.get_data(x).reset_index().rename(columns={'index':'date'})
