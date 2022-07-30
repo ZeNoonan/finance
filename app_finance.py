@@ -51,7 +51,8 @@ def safe_read_json(data):
     if (data.find("Error Message") != -1):
         raise Exception(data[20:-3])
     else:
-        return pd.read_json(StringIO(data))
+        return pd.read_json((data))
+        # return pd.read_json(StringIO(data))
 
 
 def historical_stock_data(ticker, period = None, dailytype = None, last = None, start = None, end = None):
@@ -295,7 +296,13 @@ def balance_sheet(ticker, period = 'annual', ftype = 'full'):
         print('Balance sheet type not correct')
 
     url = urlroot + typeurl + ticker.upper() + "?" + "&period=" + period + "&apikey=" + apikey
+    x_y="https://fmpcloud.io/api/v3/balance-sheet-statement/AAPL?limit=120&apikey=YOUR_API_KEY"
+    st.write('this is what it should look like',x_y)
+    st.write('check url',url)
+    response = urlopen(url)
+    data = response.read().decode("utf-8")
     data = safe_read_json(url)
+    st.write(data)
     return data
 
 today = datetime.today()
@@ -324,7 +331,7 @@ try:
 except:
     set_apikey(api_key)
 
-symbol_search = st.sidebar.text_input('Symbol', 'AMZN')
+symbol_search = st.sidebar.text_input('Symbol', 'AAPL')
 #df_ticker = sts.ticker_search(match = symbol_search)
 
 #scroll_list = list(df_ticker.name.values)
@@ -340,51 +347,103 @@ symbol_search = st.sidebar.text_input('Symbol', 'AMZN')
 
 if st.sidebar.button("Start"):
 
-    try:
-        symbol = symbol_search
-        #df_ticker.loc[df_ticker['name'] == selected,'symbol'][0]
+    symbol = symbol_search
+    #df_ticker.loc[df_ticker['name'] == selected,'symbol'][0]
 
-        st.write('showing results for:', symbol)
+    st.write('showing results for:', symbol)
 
-        # get historical prices
-        df_prices_ = historical_stock_data(symbol, dailytype = 'line', start = one_years_ago_str, end =todaystr)
-        df_prices = df_prices_.reset_index()
-        st.write('df_prices',df_prices.head(1))
-        # get financial ratios
-        df_ratios = financial_ratios(ticker=symbol,period='annual',ttm = False)
-        st.write('df_ratios',df_ratios.head(1))
-        # get performance metrics
-        df_metrics = key_metrics(ticker =symbol, period = 'annual')
-        st.write('df_metrics',df_metrics.head(1))
-        # get income statement
-        df_income = income_statement(ticker = symbol, period = 'annual', ftype = 'full')
-        st.write('df_income',df_income.head(1))
-        df_metrics = enterprise_value(ticker =symbol, period = 'annual')
-        df_metrics = balance_sheet(ticker =symbol, period = 'annual')
-        st.write('df_enterprise',df_metrics.head(1))
+    # get historical prices
+    df_prices_ = historical_stock_data(symbol, dailytype = 'line', start = one_years_ago_str, end =todaystr)
+    df_prices = df_prices_.reset_index().set_index('date')
+    st.write('df_prices',df_prices.head())
+    # get financial ratios
+
+    df_balance_sheet = balance_sheet(ticker =symbol, period = 'annual').set_index('date')
+    st.write('working up to here')
+    st.write('df_balance sheet',df_balance_sheet.head())
+
+    df_ratios = financial_ratios(ticker=symbol,period='annual',ttm = False).set_index('date')
+    st.write('df_ratios',df_ratios.head())
+    # get performance metrics
+    df_metrics = key_metrics(ticker =symbol, period = 'annual').set_index('date')
+    st.write('df_metrics',df_metrics.head())
+    # get income statement
+    df_income = income_statement(ticker = symbol, period = 'annual', ftype = 'full').set_index('date')
+    st.write('df_income',df_income.head())
+    # df_enterprise = enterprise_value(ticker =symbol, period = 'annual').set_index('date')
+    # st.write('df_enterprise',df_enterprise.head())
+    st.write('Is balance sheet working??')
 
 
-        # get cashflow statement
-        # df_cashflow = cash_flow_statement(ticker = symbol, period = 'annual', ftype = 'full')
-        # get discounted cash_flow_statement
-        # df_dcf = dcf(ticker = symbol, history = 'annual')
+    test_concat=pd.concat([df_prices,df_ratios,df_metrics,df_income,df_balance_sheet])
+    st.write(test_concat)
 
-    except:
-        st.write("Stock data unavailable!")
+
+    # get cashflow statement
+    # df_cashflow = cash_flow_statement(ticker = symbol, period = 'annual', ftype = 'full')
+    # get discounted cash_flow_statement
+    # df_dcf = dcf(ticker = symbol, history = 'annual')
+
+    # except:
+    #     st.write("Stock data unavailable!")
+
+
+
+    # try:
+    #     symbol = symbol_search
+    #     #df_ticker.loc[df_ticker['name'] == selected,'symbol'][0]
+
+    #     st.write('showing results for:', symbol)
+
+    #     # get historical prices
+    #     df_prices_ = historical_stock_data(symbol, dailytype = 'line', start = one_years_ago_str, end =todaystr)
+    #     df_prices = df_prices_.reset_index().set_index('date')
+    #     st.write('df_prices',df_prices.head())
+    #     # get financial ratios
+
+    #     df_balance_sheet = balance_sheet(ticker =symbol, period = 'annual').set_index('date')
+    #     st.write('working up to here')
+    #     st.write('df_balance sheet',df_balance_sheet.head())
+
+    #     df_ratios = financial_ratios(ticker=symbol,period='annual',ttm = False).set_index('date')
+    #     st.write('df_ratios',df_ratios.head())
+    #     # get performance metrics
+    #     df_metrics = key_metrics(ticker =symbol, period = 'annual').set_index('date')
+    #     st.write('df_metrics',df_metrics.head())
+    #     # get income statement
+    #     df_income = income_statement(ticker = symbol, period = 'annual', ftype = 'full').set_index('date')
+    #     st.write('df_income',df_income.head())
+    #     # df_enterprise = enterprise_value(ticker =symbol, period = 'annual').set_index('date')
+    #     # st.write('df_enterprise',df_enterprise.head())
+    #     st.write('Is balance sheet working??')
+
+
+    #     test_concat=pd.concat([df_prices,df_ratios,df_metrics,df_income,df_balance_sheet])
+    #     st.write(test_concat)
+
+
+    #     # get cashflow statement
+    #     # df_cashflow = cash_flow_statement(ticker = symbol, period = 'annual', ftype = 'full')
+    #     # get discounted cash_flow_statement
+    #     # df_dcf = dcf(ticker = symbol, history = 'annual')
+
+    # except:
+    #     st.write("Stock data unavailable!")
 
 stocks=pd.read_excel('C:/Users/Darragh/Documents/Python/finance_ratios/ticker_select.xlsx')
 # st.write(stocks['Ticker'])
 
-for symbol in stocks['Ticker']:
-    try:
-        # count += 1
-        # df = investpy.get_stock_historical_data(stock=ticker,country=country,from_date=f'{start}', to_date=f'{today}')
-        df = historical_stock_data(symbol, dailytype = 'line', start = one_years_ago_str, end =todaystr)
-        # df= df.rename(columns={"Close": "Adj Close"})
-        # print(f'Analyzing {count}.....{ticker}')
-        # print(df.info())  <== To see what you're getting
-        df.to_csv(fr'data/{symbol}.csv')
-        # time.sleep(0.25)
-    except Exception as e:
-        st.write(e)
-        st.write(f'No data on {symbol}')
+# for symbol in stocks['Ticker'][:2]:
+#     try:
+#         # count += 1
+#         # df = investpy.get_stock_historical_data(stock=ticker,country=country,from_date=f'{start}', to_date=f'{today}')
+#         df = historical_stock_data(symbol, dailytype = 'line', start = one_years_ago_str, end =todaystr)
+#         df1=financial_ratios(ticker=symbol,period='annual',ttm = True)
+#         # df= df.rename(columns={"Close": "Adj Close"})
+#         # print(f'Analyzing {count}.....{ticker}')
+#         # print(df.info())  <== To see what you're getting
+#         # df.to_csv(fr'data/{symbol}.csv')
+#         # time.sleep(0.25)
+#     except Exception as e:
+#         st.write(e)
+#         st.write(f'No data on {symbol}')
