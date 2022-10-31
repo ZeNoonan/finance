@@ -1,5 +1,7 @@
 import streamlit as st
 
+st.set_page_config(layout="wide")
+
 with st.expander('April 2018 letter'):
     st.write("Some of our businesses serve shrinking\
     verticals or those that are otherwise troubled, so we don’t necessarily expect strong organic growth from\
