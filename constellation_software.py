@@ -2,6 +2,23 @@ import streamlit as st
 
 st.set_page_config(layout="wide")
 
+with st.expander('Sep 2021 Q&A'):
+    st.write("Most of the nice businesses that we buy have been built by a team who have been running the business\
+    for a while. If the customer turnover and employee turnover are low, we know we are dealing with good\
+    managers.")
+    st.write("If we are buying a business that is performing poorly… that has higher than industry average customer\
+    turnover and/or high employee turnover, then we are likely to have to intervene in some fashion. That\
+    could be as benign as coaching or as draconian as changing management. ")
+    st.write("This largely dodges your question about management attributes. I despair of answers that are some\
+    version of 'intelligent, energetic, ethical'. I know some great business builders who didn't win the genetic\
+    lottery in the intelligence category but compensated with hard work and determination. Energy can be\
+    poorly channeled. Ethics seem to get pretty plastic under enough carrot and stick stress. I'd rather use a\
+    track record of consistently happy and loyal customers and employees to judge a team. That strikes me\
+    as a far better predictor of future performance than psychometric questionnaires or dowsing for cultural\
+    fit.")
+    st.write("")
+    st.write("")
+
 with st.expander('April 2018 letter'):
     st.write("Some of our businesses serve shrinking\
     verticals or those that are otherwise troubled, so we don’t necessarily expect strong organic growth from\
@@ -200,8 +217,4 @@ with st.expander('April 2017 letter'):
         resources, some from large patent portfolios, and some from enormous fixed assets. CSI doesn’t have\
         these advantages. Our employees, and the customer relationships that those employees have built and\
         fostered over many years, provide our competitive advantage.")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
+    
