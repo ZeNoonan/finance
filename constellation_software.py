@@ -99,7 +99,100 @@ with st.expander('Nov 2018 Q&A'):
     We have discussed the idea of gathering and codifying operating methods at the board a couple of times.\
     The discussions were in‐passing, and not in‐depth.")
 
+with st.expander('Oct 2018 Q&A'):
+    st.write("I’m leery of corporate culture. The popular business press has touted it as a tool to improve corporate\
+    performance for decades. I find it a fuzzy concept (values, beliefs, and?) and a bit threatening. Actively\
+    promoting “correct corporate culture” has vague overtones of brainwashing and the cult‐like\
+    expectation of acquiescence. I won’t accept a set of values and beliefs that are foisted upon me, and I\
+    would not expect others to accept them, either.\
+    I think we have lots of different sub‐cultures and more than our share of heretics at CSI. Some of these\
+    sub‐cultures will thrive, and some will fail. The cultures that are successful are likely to propagate their\
+    values and beliefs by example and by selection. With that sort of evolutionary process at play, my sense\
+    is that we don’t need to be preaching corporate culture from head office.")
+    
+with st.expander('Oct 2018 Q&A Part 2'):
+    st.write("There are two questions. I’ll respond to the second first: Does CSI track the engagement & morale metrics\
+    of our Operating Groups?\
+    Engagement and morale metrics are not something we track from head office. Implicit in the question, is\
+    the assumption that superior employee engagement and morale, coupled with head office supervision,\
+    will lead to better company performance.\
+    I noticed employee engagement as a topic a couple of months ago when one of our groups hired a speaker\
+    to talk about it at their off-site meeting. A bit of casual Googling showed me that employee engagement\
+    was starting to get buzz in the business press and Amazon had a slew of books on the topic by general\
+    purpose business gurus (“GPBG”). I’m suspicious of GPBG’s, so I started digging for relevant scholarly\
+    research. A resource that I like is the Centre for Evidence Based Management’s library website, where\
+    you can search for systematic reviews and meta analyses ( http://cebma-library.org/ ). Normal humans\
+    don’t have the time and/or skills to wade through 1000’s of research papers to generate informed\
+    opinions. Systematic reviews and meta-analyses do a lot of the work for us.")
+    
+    st.write("The consistent criticisms of employee engagement as a cause of business unit performance seemed to be\
+    three-fold: employee engagement is a fuzzily defined concept, it isn’t clear that it causes performance\
+    (although a correlated concept, job satisfaction, does appear to be a cause performance), and there are a\
+    large number of other factors that have statistically significant effects upon performance, the most\
+    compelling of which is an employee’s satisfaction with their supervisor.")
 
+    st.write("One of the fundamental beliefs at CSI, is that autonomy motivates people, and bureaucracy does the\
+    opposite, so we try to do as many of the important monitoring tasks with as light a touch as possible. I\
+    notice CSI managers who can’t retain good subordinates. This isn’t data provided by a head office\
+    supervisory system and doesn’t involve any bureaucracy… just personal awareness. I think our Operating\
+    Group Managers and Portfolio Managers monitor turnover similarly. This practice seems more likely to\
+    improve performance with less effort than tracking engagement and morale metrics.")
+    
+    st.write("And the first question: What does CSI do to attract, retain and motivate employees?\
+    Our internal recruiters use all the normal methods to attract new employees: job boards, search\
+    consultants, LinkedIn, referral fees for current employees who generate successful candidates, etc.\
+    Attracting employees works best for me via my network. I get better folks who tend to stay. Retaining\
+    employees seems to require big doses of opportunity and occasional empathy: Opportunity because the\
+    best employees want more… more knowledge, more money, more responsibility, and more autonomy. Empathy\
+    because they are pushing their limits and sometimes crack. Motivation seems to come from the\
+    team and the task. If employees work with people that they respect on tasks that are important, then\
+    finding the motivation isn’t a problem.")
+    
+with st.expander('Sep 2018 Q&A'):
+    st.write("We use a weighted four-scenario approach to assess investment prospects. Academics call this mutually\
+    exclusive collectively exhaustive scenario modelling or “MECE”. The cash flows of each of the four\
+    scenarios are probability weighted, allowing us to use a single hurdle rate across all investment prospects,\
+    even if the investments have very different risk profiles. I encourage our folks to use the MECE method\
+    and similar hurdle rates for all of our investment prospects, whether they be VMS acquisitions, internally\
+    generated Initiatives, or investments outside of the VMS sector.")
+
+    st.write("Those are good arguments in favour of buybacks. There are some counter-arguments. The question\
+    about when to use buybacks is a difficult one.\
+    My second inclination when confronted by a difficult question, is to ask what problem we are trying to\
+    solve. Once that has been nailed down, I like to use scholarly research in the field, well-constructed\
+    experiments (if the cost/benefit of our experiments can be justified), case studies, and experts to help me\
+    seek solutions.\
+    My first inclination is to rely upon my own biased and subjective experience. Tapping personal instinct\
+    and experience is nearly effortless and works fine a lot of the time, particularly with simple questions.\
+    Unfortunately, habitual or instinctive responses to difficult questions can sometimes lead to very poor\
+    outcomes. With difficult questions, I try to follow my second inclination, and only resort to my own\
+    experience and judgement if I have no alternative.")
+    
+    st.write("I asked our outside securities counsel to review my responses regarding the buyback questions. She\
+    reports that directors and officers cannot legally do buybacks while in possession of material undisclosed\
+    information (“MUI”), and that quarterly disclosures by directors and managers should be held to no lower\
+    a standard than prospectus disclosures. That strikes me as legally correct but unlikely to be the observed\
+    practice. For instance, I would not publicly disclose the specific customers and products with which CSI is\
+    getting the most traction and the extent of that success, the techniques that generate the most M&A\
+    opportunities for us, nor the places and processes by which we have recently hired and trained our best\
+    employees, etc., etc.. Those trade secrets are part of our moat. We protect them jealously. Are they\
+    MUI? My gut tells me that if we did publicly promote them, it might increase our share price in the shortterm\
+     (the legal definition of MUI) and hurt it in the long-term. This illustrates a conundrum. More\
+    information is always better for long-term investors… until its availability becomes a competitive\
+    disadvantage for their investee.")
+
+    st.write("has a calc of Average Invested Capital by Jamal in here")
+    
+    st.write("There appear to be two methods documented in the investment literature that consistently work to\
+    generate above average returns: Value and momentum. Sometimes the two overlap, but that is rare.\
+    I think you are perhaps conflating “momentum” (a proven technique) and the “crowd is right” (the crowd,\
+    by definition, gets average returns). Momentum works, but it seems to be rooted in emotion, not logic,\
+    so I’ve always shied away from it.\
+    A very special case of value investing, is the example of a company that is growing quickly, that the market\
+    expects to stop growing within the next 5-7 years, but that actually keeps growing quickly for much longer.\
+    If you can spot one of those, it may appear expensive on a PE basis, but actually be an attractive longterm \
+    investment on a “value investing” basis. Spotting this kind of investment requires the ability to\
+    foretell the distant future… which is extremely difficult to do with consistency.")
 
 
 with st.expander('April 2018 letter'):
