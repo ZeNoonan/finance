@@ -194,6 +194,94 @@ with st.expander('Sep 2018 Q&A'):
     investment on a “value investing” basis. Spotting this kind of investment requires the ability to\
     foretell the distant future… which is extremely difficult to do with consistency.")
 
+with st.expander('Sep 2018 Q&A'):
+    st.write("Constellation was a Correct Contrarian when it entered the vertical market software businesses. We were\
+    able to ignore consensus views because we had (and hopefully still have) important facts that others don’t\
+    have ('IFTODH'). If you surround yourself with curious and questing people, and develop a culture where\
+    argument and debate and experimentation are encouraged, then you are more likely to recognise,\
+    discover and use IFTODH.")
+
+    st.write("The research suggests that bias is incredibly hard to avoid, even for a well-prepared mind. The one\
+    defense I've found against unconscious bias, is to surround myself with logical intelligent antiauthoritarian \
+    (ideally unemotional) skeptics. They are hard on my ego, chew up my energy, but save me\
+    from making fatal mistakes and consistently making the same mistakes. They also provide really good\
+    whet stones against which you can hone your IFTODH, and they frequently generate new IFTODH because\
+    they are naturally sceptical of consensus thinking.\
+    I love the Merton quote that “Science is organised scepticism”. Science has had a pretty good run, so I'm\
+    a big advocate of investors and business people cultivating sceptics on their teams.")
+    
+    st.write("Incentives need to be approximately right and perceived as fair. Once people think you are in the ballpark\
+    with incentives, it is a bunch of other things like corporate culture that keep the stars and their teams\
+    around. By culture, I'm referring to mutual respect, shared values and beliefs, trust, the joy of learning\
+    and mastering and sharing. You can't mandate that stuff. It slowly seeps into the coffee and becomes\
+    the accepted way that things are done. A bad boss can stamp out a good culture in no time.\
+    For the 6 Operating Group ('OG') managers we have a formulaic incentive plan based on their respective\
+    OG revenues (net of third party costs) revenue growth (combined organic and acquired), and profitability\
+    (a return on capital measure).")
+    st.write("We tried to design the formula to align annual incentive compensation with the annual increase in each\
+    OG's intrinsic value.\
+    The OG managers have a sense of their incentive comp at all times based upon the formula and how their\
+    OG is performing. Bonuses are paid in cash, but the OG managers must then invest 75% of their after tax\
+    incentive compensation in CSI shares that are purchased on the open market. These shares are held in\
+    trust and cannot be sold for between 3 and 10 years (it used to be between 3 and 5 years).\
+    We designed the hold periods and the trust to align the managers' capital appreciation with that of CSI's\
+    long term shareholders.")
+    
+    st.write("I prefer incentives to be formulaic because subordinates are more likely to be candid. When bonuses\
+    depend upon a manager's subjective assessment of a subordinate, there's a temptation for the\
+    subordinate to optimise their bonus by agreeing with the boss. Formulas also get questions of fairness\
+    into the open since the OG managers know the components and relative weightings in the formula and\
+    can debate their appropriateness. Not all of our OG managers agree with a formulaic approach to\
+    incentive comp… some feel that they have built enough mutual trust between themselves and their direct\
+    reports to be able to work with more of an ad hoc approach.")
+
+    st.write("One of the many possible complaints about formulaic incentives is the free-rider problem. Imagine a\
+    manager who is doing 50 hour weeks, but is benefitting from an industry tailwind and has a strong group\
+    of subordinate managers who are generating superior returns on capital and revenue growth. That OG\
+    manager would receive a high bonus. Compare that to an extremely hard working OG manager who is\
+    running a cyclical business that is struggling in absolute terms, but doing well compared to its industry\
+    peers. An example of the latter would be our Homebuilding OG in '08 and '09, when 80% of their prior\
+    years' bonuses were vapourised by the downturn in the homebuilding industry.")
+
+    st.write("All of our OG Managers have been responsible for deploying the majority of their capital to make\
+    acquisitions, and for building their teams. If they have built a portfolio of businesses where their\
+    investment is disproportionately high compared to the 'difficulty' of those business, and their team is not\
+    what it should be, then we believe that their incentive should reflect that, irrespective of the effort they\
+    are expending to manage their portfolio. Similarly, if the manager has a portfolio of great businesses that\
+    'run themselves' and the manager has trained and promoted a competent and inspiring team, then I have\
+    no problem with them reaping the incentives provided by the bonus formula. However, if either manager\
+    is unethical, is not respected by their subordinates, or is trading off long-term success for short-term\
+    profits to optimise bonus at the expense of long-term shareholder value, then we will replace them.")
+
+    st.write("The Portfolio managers and Business Unit managers below our Operating Group managers have\
+    incentives that are built on similar, but not identical concepts. Sometimes they have return on sales\
+    instead of return on capital as a key portion of their bonus formulas. Sometimes they are allowed to\
+    return excess capital rather than deploy it. If all of our managers were experienced and competent capital\
+    deployers, I'd hope to see more consistency in our incentive compensation formulas across various levels\
+    of the organisation, as that would improve alignment between managers and their reports.")
+    
+with st.expander('Jun 2018 Q&A'):
+    st.write("I don't know whether we'd use high leverage or not to increase dividends. It feels like a manoeuvre that\
+    gets shareholders maybe a 20%‐25% one year pop in their return, but then hobbles the company with\
+    debt and covenants for a very long time. That hobbling has obvious (i.e. you are less likely to take on\
+    turn‐arounds and high business risk situations when you have high financial risk) and less obvious (i.e.\
+    more short term focus) ramifications.")
+
+with st.expander('May 2018 Q&A'):
+    st.write("We let Operating Groups compete for a customer’s business, but that is quite rare. More frequently, Business\
+    Units within one Operating Group will compete for a customer’s business.\
+    When we are dealing with acquisition prospects, we try to limit the competition between CSI‐owned entities.\
+    We’d like only one manager and their staff to have responsibility for building a relationship with each prospect,\
+    since this can be a decade long process. When we buy a business and run it as a stand‐alone Business Unit post\
+    acquisition, we don’t expect synergies with any other CSI Business Units, so there is no economic reason for us to\
+    seek a “better fit” elsewhere within CSI.")
+    
+with st.expander('Apr 2018 Q&A'):
+    st.write("FILL IN")
+    st.write("")
+    st.write("")
+
+
 
 with st.expander('April 2018 letter'):
     st.write("Some of our businesses serve shrinking\
