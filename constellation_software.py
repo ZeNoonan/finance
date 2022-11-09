@@ -277,11 +277,14 @@ with st.expander('May 2018 Q&A'):
     seek a “better fit” elsewhere within CSI.")
     
 with st.expander('Apr 2018 Q&A'):
-    st.write("FILL IN")
+    st.write("An important item to keep in mind, is that we are not doctrinaire about organizational structure: we are willing to\
+    cater to exceptional people with exceptional talents who wish to ply their trade using unique reporting\
+    relationships or capital deployment models.")
     st.write("")
     st.write("")
 
-
+with st.expander('Transcript 2022 AGM'):
+    st.write('on page 18')
 
 with st.expander('April 2018 letter'):
     st.write("Some of our businesses serve shrinking\
