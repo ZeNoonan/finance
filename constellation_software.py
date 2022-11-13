@@ -284,7 +284,58 @@ with st.expander('Apr 2018 Q&A'):
     st.write("")
 
 with st.expander('Transcript 2022 AGM'):
-    st.write('on page 18')
+    st.write("I love doing ad hoc reports. And so if we had a particular issue, and we really wanted to how many people we have\
+    living and working in to it ,I'm sure we can get it. But I despise perpetually required reports that no one ever looks at\
+    again. And that's the kind of thing that I think you get when you embed geographic reporting requirements and\
+    things of that nature, if that's not the way you organize.\
+    Now obviously, if we had country heads for individual countries, then it would be quite different. But we don't. We\
+    have business unit managers. And some of those businesses are international and some are very, very local. Some\
+    of them are even state-related individual states.")
+    st.write("So we -- the actual agenda is it usually kicks off with a 1-hour presentation. It's really the only signi¡cant\
+    presentation at most Board meetings, where we do what's called a mature bar. And we look back at a company\
+    that's at least 5 years in our portfolio. We used to pick them randomly. And I love that because one quarter would be\
+    looking at a company that had 3 employees when we bought it and what happened to it. And another quarter, we'd\
+    be looking at 1 that had 300 employees, and we thought it really drove home to the Directors what we do, which is\
+    don't buy world-class companies that are #1 in their market and dominate their space. And are kicking out huge\
+    ones cash.")
+    st.write("We buy nice businesses that are really good to their customers and really good to their employees, and we help\
+    them run the businesses a little bit better by sharing some best practices. And encouraging them to keep learning\
+    are growing and applying what they can learn from others inside the group. And that was painfully obvious when we\
+    randomly picked the companies for follow-up the mature parts as we call them post-acquisition reviews.")
+    st.write("We switched because Directors like to spend their times on things that are important and looking at 3-person\
+    acquisitions clearly is below the pay grade of directors. And so now we just look at big good ones and big bad ones.\
+    And when I say bad ones, I mean we're talking ones that generate double-digit rates of return, but just not their\
+    hurdle rate as a rule. There are a couple below that, but not much. And I have no real fault we're moving to looking at\
+    the larger mature acquisitions. I just think we lost something when we did that, which was forcing people to\
+    confront. When you do 100-and-something acquisitions a year, they aren't going to all be wonderful businesses that\
+    are optimized and performing well")
+    st.write("And the underlying thesis and these companies seems to be the switching costs are very, very high and that if you\
+    come to dominate the market, you'll literally have the vast majority of the market share. And so a winner takes all\
+    kind of idea. And if the market is big enough and you dominate the market by getting out there early and giving the\
+    stuff away for free or bringing people to take it because of the switching costs, it will never get ripped out and at\
+    some stage, you'll be able to jack up the price once you establish a de facto monopoly. So it's monopolization of\
+    micro markets in a very predesigned fashion. But the underlying assumption is that no other VC will try to do the\
+    same thing. And so what you end up with is the airline industry, which everyone knew was going to be a big industry,\
+    everyone wanted to travel, everyone invested in airlines. Same thing with automobiles.")
+    st.write("When we have large and obvious markets, you get way too much money chasing the industry. And if you don't end\
+    up with something that is truly high barriers to entry, high pro¡tability, it ends up being a blood bath \
+    for everyone who invest with maybe a exception of 1 or 2. And so if you look at automobiles in North America, there were 3 that\
+    survived up until '08 and two, risk -- and so forth is the only 1 of over 2,500, I believe, North American automobile\
+    companies. Most of whom went bankrupt before the market really took off. And so that was a fascinating example\
+    of the fact that markets are willing to ¡nance activities long before there's evidence of revenues and pro¡tability.")
+    st.write("I just gave a lecture at the local business school on the topic of what happened in automobiles and the radio\
+    industry and the television industry and newspapers. It was basically (inaudible) and he's one of my business\
+    heroes. He loved growth industries, and they swapped them around something ¡erce. It wasn't until using his that he\
+    had any money, and that was because he basically ¡gured out how to run a local newspaper, which was not a rapid\
+    growth business, you happen to be picked up alongside of a local radio station. And yes, it's a lovely story about how\
+    being early in a rapid growth market can be a prescription to really hurt yourself. So you have to pick your spots.\
+    Standing the degree switching costs are signi¡cant in these verticals is absolutely critical.")
+    st.write("I mean, feel free to go ahead and in fact, I think all of you should. And just the 1 point that obviously, we have\
+    businesses in disparate geographies with different religions and different cultures and different ethnicity, culture is\
+    going to be very different in these places. And so I think prescribing culture, good luck. But then values -- go ahead.\
+    How do you share values with your newly acquired business, that is something we have to do pretty quickly.")
+    st.write("")
+    st.write("")
 
 with st.expander('April 2018 letter'):
     st.write("Some of our businesses serve shrinking\
