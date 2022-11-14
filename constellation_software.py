@@ -337,6 +337,18 @@ with st.expander('Transcript 2022 AGM'):
     st.write("")
     st.write("")
 
+with st.expander('Feb 2021 letter'):
+    st.write("I used to argue that we needed to maintain our hurdle rates because dropping them for a few\
+    marginal capital deployments would cause the returns on our entire portfolio to drop. The\
+    evidence supported my contention, so we kept the rates high for small and mid-sized vertical\
+    market software ('VMS') acquisitions and made very few exceptions for large VMS\
+    acquisitions. The by-product of that discipline has been a perennial inability to invest all of the\
+    cash that we generate.")
+    st.write("")
+    st.write("")
+    st.write("")
+
+
 with st.expander('April 2018 letter'):
     st.write("Some of our businesses serve shrinking\
     verticals or those that are otherwise troubled, so we don’t necessarily expect strong organic growth from\
@@ -536,3 +548,11 @@ with st.expander('April 2017 letter'):
         these advantages. Our employees, and the customer relationships that those employees have built and\
         fostered over many years, provide our competitive advantage.")
     
+with st.expander('April 2016 letter'):
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
