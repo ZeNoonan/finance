@@ -549,9 +549,30 @@ with st.expander('April 2017 letter'):
         fostered over many years, provide our competitive advantage.")
     
 with st.expander('April 2016 letter'):
-    st.write("")
-    st.write("")
-    st.write("")
+    st.write("Only one other HPC has followed a strategy of buying hundreds of small businesses and managing them\
+    autonomously. They eventually caved in to increased centralisation. My hunch is that it takes an\
+    unusually trusting culture and a long investment horizon to support a multitude of small businesses and\
+    their entrepreneurial leaders. If trust falters the BU’s can be choked by bureaucracy. If short term results\
+    are paramount, the siren song of consolidation synergies is powerful. We continue to believe that\
+    autonomy and responsibility attract and motivate the best managers and employees.")
+
+    st.write("ROIC is the next metric in the table, but I thought it was worth a long segue to discuss what we found at\
+    the HPCs when we studied a closely related metric, EBITA/Average Total Capital (“EBITA Return”).\
+    Both metrics look at return on investment. ROIC is the return on the shareholders’ investment and\
+    EBITA Return is the return on all capital. In the former, financial leverage plays a role. In the latter only\
+    the operating efficiency with which all net assets are used is reflected, irrespective of whether those assets\
+    are financed with debt or shareholders’ investment.")
+
+    st.write("Surprisingly the HPCs seem to have a fairly consistent pattern of EBITA Returns. Most of them started\
+    out in an asset-light business. A few didn’t have the “asset-light epiphany” until after they’d struggled\
+    with more capital intensive businesses for a few years. During the first year of data that we were able to\
+    source for each HPC, they averaged a respectable 21% EBITA Return. Subsequently their returns\
+    experienced a period of dramatic improvement as they refined their operating methods and philosophies.\
+    These operating methods varied, but generally involved techniques for the detailed measurement of\
+    business processes coupled with relentless incremental improvement. At some of the HPCs the methods\
+    are applied with a zeal that makes me a bit uncomfortable. It’s hard to argue with results. The average\
+    peak EBITA Return for the HPCs was 46%, and on average it took them 6 years from the start of our\
+    measurement period to achieve those peak returns.")
     st.write("")
     st.write("")
     st.write("")
