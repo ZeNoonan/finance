@@ -573,7 +573,20 @@ with st.expander('April 2016 letter'):
     are applied with a zeal that makes me a bit uncomfortable. It’s hard to argue with results. The average\
     peak EBITA Return for the HPCs was 46%, and on average it took them 6 years from the start of our\
     measurement period to achieve those peak returns.")
-    st.write("")
-    st.write("")
+    st.write("At peak returns, the HPCs’ cash flows far exceeded their internal requirements, so all of them embarked\
+    upon acquisition programs. They acquired businesses similar to their own - i.e. asset light business with\
+    good barriers to entry and a history of positive organic growth. They paid significant premiums to book\
+    value for the acquisitions. The initial EBITA Return in each of the acquired businesses would have been\
+    modest because of the high purchase prices, but organic growth required little investment in tangible\
+    assets so returns would have subsequently climbed. In many instances the acquired businesses were not\
+    run optimally prior to acquisition, and the HPCs were able to apply their business practices to further\
+    improve returns.")
+
+    st.write("Financial leverage is a tool that can have a profound impact on ROIC. Some HPCs have whittled down\
+    Invested Capital as a percent of Total Capital by borrowing to pay dividends, repurchase shares, and/or\
+    make acquisitions. This has helped them generate higher ROIC’s. One of the HPCs has returned their\
+    entire Invested Capital to shareholders, and hence generates an infinite ROIC. If covenant-free long tenured\
+    debt is available at a lower after tax cost than equity, then this kind of capital structure is\
+    attractive.")
     st.write("")
     st.write("")
