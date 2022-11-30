@@ -588,5 +588,34 @@ with st.expander('April 2016 letter'):
     entire Invested Capital to shareholders, and hence generates an infinite ROIC. If covenant-free long tenured\
     debt is available at a lower after tax cost than equity, then this kind of capital structure is\
     attractive.")
+    st.write("All of these strategies work, albeit with very different organic growth outcomes. We have tracked the\
+    IRR for all of the acquisitions that we’ve made since 2004 (i.e. >95% of the acquisition capital that we’ve\
+    deployed). When we graph the IRR’s vs the post-acquisition OGr of each investment, there is little\
+    correlation. If you are really striving to see a relationship, you might argue that our best and our worst\
+    IRR’s are both associated with low post-acquisition organic growth. Based on the data, there are much\
+    more obvious drivers of IRR than OGr. For instance, Revenue multiple paid (lower purchase price\
+    multiples are better - no revelation there), and post-acquisition EBITA margin (fatter margin acquisitions\
+    tend to generate better IRR’s – somewhat intuitive, but needs further work).")
+    st.write("We dislike changing bonus plans because it literally takes years for trust to re-build to the point where\
+    managers are willing to trade off short term profitability and bonus for higher longer term profitability.\
+    We saw this in spades when our major investors put CSI up for sale in 2011. ROIC increased sharply,\
+    acquisitions slowed dramatically, and Initiative spending dropped. Faced with the prospect of new\
+    owners intent on changing the bonus program and borrowing mountains of debt to acquire the business,\
+    our managers reacted as you’d expect, maximising short term profitability and bonuses at the cost of\
+    longer term growth and profitability")
+    st.write("The second alternative is capping bonuses. This feels like an extremely strong incentive to shift revenue\
+    and profit between good and bad years. It also undermines the utility of the accounting and information\
+    systems as management tools. Good people who might stray, become bad people in tiny steps greased by\
+    “everyone is doing it” and “it was a grey area”. The last thing you want to do is build an incentive system\
+    that pushes employees out onto that slippery slope. We aren’t fans of capped bonuses.")
+    st.write("The third alternative shifts the capital allocation task down to the Operating Groups and Business Units.\
+    If they are producing handsome returns, they also need to figure out how to redeploy some of that capital.\
+    If they aren’t producing good returns, we are happy for them to send excess capital back to head office.\
+    Since the Operating Groups and BUs “own” the bulk of our human resources, they also have the talent to\
+    develop opportunities and manage them (whether those opportunities are acquisitions or Initiatives). This\
+    is the alternative we’ve opted for when ROIC’s get very high.")
+    st.write("When really good companies start trading at 5 and 6 times revenues, it’s time to start worrying. I hope\
+    our shareholders are never in that position.")
+    st.write("")
     st.write("")
     st.write("")
