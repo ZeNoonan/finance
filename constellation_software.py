@@ -616,6 +616,38 @@ with st.expander('April 2016 letter'):
     is the alternative we’ve opted for when ROIC’s get very high.")
     st.write("When really good companies start trading at 5 and 6 times revenues, it’s time to start worrying. I hope\
     our shareholders are never in that position.")
-    st.write("")
+    
+with st.expander('April 2015 letter'):
+    st.write("In assessing CSI’s value, it is tempting to look at cash flows after tax, interest and capex as the “real” return on\
+    shareholders’ capital. However, you should only do that if you can convince yourself that the underlying\
+    (mostly intangible) assets of our businesses are not deteriorating. The analysis of Maintenance Revenues\
+    in Table 2 is designed to give you some tools to assess the health of those intangible assets. If Maintenance\
+    Revenue continues to grow organically, there’s reason to believe that our intangible assets are not\
+    deteriorating. A nice byproduct of isolating the Organic Growth in Maintenance Revenue, is that you can\
+    also see how much Maintenance Revenue has been acquired and compare that to the amount spent on\
+    acquisitions.")
+    st.write("I've traditionally travelled on economy tickets and stayed at modest hotels because I\
+    wasn't happy freeloading on the CSI shareholders and I wanted to set a good example for the thousands of\
+    CSI employees who travel every month. I'm getting older and wealthier and find that I'm willing to trade\
+    more of my own cash for comfort, convenience, and speed … so I’m afraid you’ll mostly see me in the\
+    front of the plane from here on out.")
+    st.write("I’m still planning to do the work that I’ve always done: acquisitions, monitoring,\
+    best practice development, investor relations and financing. I’m just not going to do the weekends,\
+    allnighters and a constant grind of 60 hour plus weeks that characterised my earlier career. Keep in mind that\
+    CSI has an unconventional organisational structure, and we seem to have prospered to date without a lot of\
+    centralised command and control. While I may not be travelling as much as before nor putting in as many\
+    hours, CSI has lots of seasoned and accomplished managers at the Operating Group level who have become\
+    far better coaches, culture bearers, and hypothesis generators than I ever was.")
+    st.write("Shareholders sometimes ask why we don’t pursue economies of scale by centralising functions such as\
+    Research & Development and Sales & Marketing. My personal preference is to instead focus on keeping\
+    our business units small, and the majority of the decision making down at the business unit level. Partly\
+    this is a function of my experience with small high performance teams when I was a venture capitalist, and\
+    partly it is a function of seeing that most vertical markets have several viable competitors who exhibit little\
+    correlation between their profitability and relative scale. Some of our Operating Group GM’s agree with\
+    me, while others are less convinced. There are a number of implications if you share my view: We should\
+    a) regularly divide our largest business units into smaller, more focused business units unless there is an\
+    overwhelmingly obvious reason to keep them whole, b) operate the majority of the businesses that we\
+    acquire as separate units rather than merge them with existing CSI businesses, and c) drive down cost at\
+    the head office and Operating Group level.")
     st.write("")
     st.write("")
