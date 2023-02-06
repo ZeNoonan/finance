@@ -3,7 +3,7 @@ from altair.vegalite.v4.schema.core import Header
 import pandas as pd
 import numpy as np
 import streamlit as st
-import yfinance as yf
+# import yfinance as yf
 from datetime import date
 import random
 import requests
@@ -39,9 +39,9 @@ data = pd.DataFrame(comp(iterations=20))
 # page 20 sports betting
 
 
-col1,col2=st.beta_columns(2)
-col3,col4=st.beta_columns(2)
-col5,col6=st.beta_columns(2)
+col1,col2=st.columns(2)
+col3,col4=st.columns(2)
+col5,col6=st.columns(2)
 probaility_investment_goes_up_in_value=col1.number_input('probaility_investment_goes_up_in_value',value=0.55,step=.01)
 # probaility_investment_goes_up_in_value=.55
 probaility_investment_goes_down_in_value = 1-probaility_investment_goes_up_in_value
@@ -64,7 +64,7 @@ col6.write(format(answer_right,".2f"))
 
 per_cent=(probaility_investment_goes_up_in_value / fraction_lost_in_negative_outcome) -\
 ((probaility_investment_goes_down_in_value)/fraction_gained_in_positive_outcome)
-
+st.write("take away one from the other leaves the fraction to bet of your bankroll")
 st.write("answer: % to bet is: ", format(per_cent,".2f"))
 
 capital=st.number_input('capital',value=1000)
