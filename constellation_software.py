@@ -649,5 +649,16 @@ with st.expander('April 2015 letter'):
     overwhelmingly obvious reason to keep them whole, b) operate the majority of the businesses that we\
     acquire as separate units rather than merge them with existing CSI businesses, and c) drive down cost at\
     the head office and Operating Group level.")
-    st.write("")
+    st.write("Nevertheless, CSI does have a\
+    compelling asset that is difficult to both replicate and maintain: We have 199 separately tracked business\
+    units and an open, collegial, and analytical culture. This provides us with a large group of businesses on\
+    which to test hypotheses, a ready source of ideas to test, and a receptive audience who can benefit from\
+    their application. More quickly and cheaply than any company that I know, we can figure out if a new\
+    business process works. This sort of ad hoc experimentation doesn’t require enormous systems or the\
+    peddling of a new dogma to the unreceptive. It requires curious managers at a few dozen business units\
+    and a couple of clever analysts to plausibly test if a process works. Once a new best practice starts working\
+    within CSI, wide access to benchmarking information tends to rapidly breed emulation. We’ve found a\
+    few other examples of high performance conglomerates built around the idea of continuously refining their\
+    business processes and then driving ever more acquired businesses up their business process learning curve\
+    as quickly as possible")
     st.write("")
