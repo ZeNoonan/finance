@@ -661,4 +661,16 @@ with st.expander('April 2015 letter'):
     few other examples of high performance conglomerates built around the idea of continuously refining their\
     business processes and then driving ever more acquired businesses up their business process learning curve\
     as quickly as possible")
+with st.expander('April 2015 letter'):
+    st.write("Our favourite businesses are those that are growing just slightly faster than their markets, gradually adding\
+    market share and customer share (i.e. “share of wallet”), while generating a good return on the capital that\
+    they have invested to produce organic growth. Small market share gains are much less likely to trigger a\
+    scorched earth competitive response that erodes pricing and triggers wildly unproductive R&D and S&M\
+    binges.")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
+    st.write("")
     st.write("")
