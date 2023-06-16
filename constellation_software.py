@@ -667,7 +667,18 @@ with st.expander('April 2015 letter'):
     they have invested to produce organic growth. Small market share gains are much less likely to trigger a\
     scorched earth competitive response that erodes pricing and triggers wildly unproductive R&D and S&M\
     binges.")
-    st.write("")
+    st.write("Varying the organic growth assumption has a tremendous impact on the intrinsic value of a CSI share.\
+    Add in another 2.5% organic growth to the base line assumption and you get more than double the\
+    intrinsic value. Subtract 2.5% from the base line organic growth assumption and you lose almost half the\
+    intrinsic value of the stock. You can see why so many software company CEO’s are growth junkies.\
+    For anyone who’s studied the industry, it is difficult to imagine a 5% perpetual swing in organic growth\
+    that doesn’t have an offsetting impact upon operating margins. That said, there’s still tremendous\
+    valuation and strategic leverage if organic growth can be increased with reasonable levels of investment.\
+    If managers have the discipline to monitor the IRR’s on their investments in organic revenue growth, then\
+    they’ve taken a critical step towards understanding the most powerful lever in software. Some of our\
+    managers are there. I suspect others are using crude heuristics like “make 20% EBITA, and you can\
+    invest the rest”. I dislike the latter approach, but many managers change their hard-won beliefs at glacial\
+    speed.")
     st.write("")
     st.write("")
     st.write("")
