@@ -661,7 +661,7 @@ with st.expander('April 2015 letter'):
     few other examples of high performance conglomerates built around the idea of continuously refining their\
     business processes and then driving ever more acquired businesses up their business process learning curve\
     as quickly as possible")
-with st.expander('April 2015 letter'):
+with st.expander('April 2014 letter'):
     st.write("Our favourite businesses are those that are growing just slightly faster than their markets, gradually adding\
     market share and customer share (i.e. “share of wallet”), while generating a good return on the capital that\
     they have invested to produce organic growth. Small market share gains are much less likely to trigger a\
@@ -679,7 +679,12 @@ with st.expander('April 2015 letter'):
     managers are there. I suspect others are using crude heuristics like “make 20% EBITA, and you can\
     invest the rest”. I dislike the latter approach, but many managers change their hard-won beliefs at glacial\
     speed.")
-    st.write("")
+    st.write("If we assume that CSI makes no further acquisitions, the Consensus Model calculates an intrinsic value\
+    that is roughly half of the current price. The magnitude of this valuation change surprised me, and\
+    suggests that our stock price could suffer very significantly if our acquisition activities slow down or the\
+    acquired businesses perform poorly. In the early days of CSI, I assumed that shareholders would be\
+    somewhat ambivalent between receiving all of CSI’s free cash flow as a dividend, and having us invest a\
+    portion of it in acquisitions. According to the model, that is resoundingly not the case.")
     st.write("")
     st.write("")
     st.write("")
