@@ -685,7 +685,11 @@ with st.expander('April 2014 letter'):
     acquired businesses perform poorly. In the early days of CSI, I assumed that shareholders would be\
     somewhat ambivalent between receiving all of CSI’s free cash flow as a dividend, and having us invest a\
     portion of it in acquisitions. According to the model, that is resoundingly not the case.")
-    st.write("")
+    st.write("The biggest surprise for me in the modeling exercise was that our multiple expansion over the last two\
+    years can be justified by our “acquisition engine”. I’d rather the market was paying for our acquisition\
+    capabilities in retrospect rather than in prospect. Nevertheless, it is clear that acquisitions have added\
+    tremendous shareholder value over the years, particularly during times of economic crisis and/or\
+    recession.")
     st.write("")
     st.write("")
     st.write("")
