@@ -690,7 +690,26 @@ with st.expander('April 2014 letter'):
     capabilities in retrospect rather than in prospect. Nevertheless, it is clear that acquisitions have added\
     tremendous shareholder value over the years, particularly during times of economic crisis and/or\
     recession.")
-    st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
+    st.write("Last year I mentioned that I’d feel comfortable using debt to finance our growth if it were long term, noncallable\
+              and the interest payments could be deferred for short periods. ")
+    st.write("That led us back into a dialog with our investment bankers. They began to understand what we wanted: a\
+        very long term instrument that we could issue in tranches whenever we needed, that was liquid and would\
+        trade at close to intrinsic value at all times so that our investors could get liquidity without taking a\
+        haircut, that was tax deductible for CSI as we expect to otherwise pay lots of cash tax, and that can be\
+        redeemed by CSI with reasonable amounts of notice if we are producing more cash than we can\
+        intelligently invest elsewhere. I’ll refer to this as a Non-Traditional Instrument or “NTI”. The novelty of\
+        the NTI was still a concern to the investment banks, but they felt that they could overcome that and sell it\
+        to retail investors if the yield were sufficiently high and the transaction fees sufficiently large. Once the\
+        first tranche of the NTI was sold, there would be a precedent trading in the market, and the investment\
+        bankers felt that the terms of subsequent NTI issues would likely be more attractive to CSI")
+    with st.expander("May 2013 letter"):
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
